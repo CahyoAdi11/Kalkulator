@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="jumlahPerulangan">Masukkan jumlah perulangan:</label>
+    <input type="number" id="jumlahPerulangan">
+    <button onclick="tampilkanKalimat()">Tampilkan Kalimat</button>
+    <div id="output"></div>
+    <form action="index.html">
+    <button>Kembali</button>
+</form>
+</body>
+<script>
+    function tampilkanKalimat() {
+            var jumlahPerulangan = document.getElementById('jumlahPerulangan').value;
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ''; 
+
+            for (var i = 0; i < jumlahPerulangan; i++) {
+                var kalimat = document.createElement('p');
+                kalimat.textContent = "Saya orang yang sabar, ramah dan tidak membenci orang";
+                outputDiv.appendChild(kalimat);
+    }      }
+    
+</script>
+</html>

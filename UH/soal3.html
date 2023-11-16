@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Menu</title>
+</head>
+<body>
+
+  <label for="kategoriMenu">Pilih Kategori Menu: </label>
+  <select id="kategoriMenu">
+    <option value="makanan">Makanan</option>
+    <option value="minuman">Minuman</option>
+  </select>
+
+  <button onclick="tampilkanMenu()">Tampilkan Menu</button>
+
+
+  <ul id="daftarMenu">
+    
+  </ul>
+
+  <script>
+    function tampilkanMenu() {
+      
+      let kategoriMenu = document.getElementById('kategoriMenu').value;
+
+      
+      let daftarMenu = [];
+      if (kategoriMenu === 'makanan') {
+        daftarMenu = ['Bakso', 'mie ayam', 'soto', 'kambing guling', 'ayam bakar', 'sate', 'mie goreng', 'mendoan'];
+      } else if (kategoriMenu === 'minuman') {
+        daftarMenu = ['Es Milo', 'Es Teh Manis', 'Es Jeruk', 'Es Campur', 'Es Kopisusu', 'Es Teh Tawar', 'Es Dawet'];
+      } else {
+        
+        alert('Pilihan tidak valid. Silahkan pilih menu yang benar.');
+        return;
+      }
+
+      let daftarMenuElemen = document.getElementById('daftarMenu');
+      daftarMenuElemen.innerHTML = '';
+      daftarMenu.forEach(menu => {
+        daftarMenuElemen.innerHTML += `<li>${menu}</li>`;
+      });
+    }
+  </script>
+  <form action="index.html">
+    <button>Kembali</button>
+</form>
+
+</body>
+</html>
